@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Cutive+Mono|Overpass+Mono');
 @import url('https://fonts.googleapis.com/css?family=Gugi');
 
+$light: rgb(250, 247, 241);
+$medium: rgb(207, 202, 188);
+$dark: rgb(12, 12, 12);
+
 
 html, body {
   height: 100%;
+  background: $light;
 }
 
 * {
@@ -28,7 +33,6 @@ h2 {
   height: 500px;
   text-align: center;
   background-image: url("../assets/abstract-architecture-background-38132.jpg");
-  // background-image: linear-gradient(to bottom right, black, white);
 }
 
 #about {
@@ -37,6 +41,11 @@ h2 {
 
 #about > h2 {
   text-align: left;
+}
+
+h4 {
+  font-size: 1.25em;
+  font-weight: bold;
 }
 
 #aboutContent > div {
@@ -60,10 +69,46 @@ p {
 
 #recent {
   height: 500px;
+  background-color: $medium;
 }
 
 #recent > h2 {
   text-align: right;
+  padding-top: 30px;
+}
+
+#recent > section > div > img {
+  border-radius: 100%;
+  width: 100px;
+  height:100px;
+
+}
+
+#recent > section > div {
+  display: block;
+}
+
+#recent > section {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  margin: 30px 30px
+}
+
+#request {
+  font-style: italic;
+  font-weight: normal;
+}
+
+#right {
+  margin-left: -20px;
+}
+
+#info > p {
+  margin: 5px 10px;
+}
+
+#info > h4 {
+  margin: 5px 10px;
 }
 
 button {
@@ -73,6 +118,6 @@ button {
   font-size: 1.5em;
   font-weight: bold;
   border: none;
-  background-color: rgb(224, 224, 224);
+  background-color: $medium;
   box-shadow: 2px 2px rgba(0, 0, 0, 0.486);
 }

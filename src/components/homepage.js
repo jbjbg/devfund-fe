@@ -26,8 +26,36 @@ class Homepage extends React.Component {
         </section>
         <section id="recent">
           <h2>Recent Giving</h2>
-          <p>This is an item someone got</p>
-          <p>This is another one</p>
+          <section>
+            <div>
+              <img src={require("../assets/people/becca.jpg")} alt="becca"/>
+              <img id="right" src={require("../assets/people/brent.jpg")} alt="brent"/>
+            </div>
+            <div id="info">
+              <h4>Subscription to egghead.io - gifted by brenttech</h4>
+              <p id="request">I'm a recent bootcamp grad and I'd love to continue my learning online. Having a subscription to egghead.io would be a huge help! -beccalee123</p>
+            </div>
+          </section>
+          <section>
+            <div>
+              <img src={require("../assets/people/brent.jpg")} alt="brent"/>
+              <img id="right" src={require("../assets/people/becca.jpg")} alt="becca"/>
+            </div>
+            <div id="info">
+              <h4>Subscription to egghead.io - gifted by brenttech</h4>
+              <p id="request">I'm a recent bootcamp grad and I'd love to continue my learning online. Having a subscription to egghead.io would be a huge help! -beccalee123</p>
+            </div>
+          </section>
+          <section>
+            <div>
+              <img src={require("../assets/people/becca.jpg")} alt="becca"/>
+              <img id="right" src={require("../assets/people/brent.jpg")} alt="brent"/>
+            </div>
+            <div id="info">
+              <h4>Subscription to egghead.io - gifted by brenttech</h4>
+              <p id="request">I'm a recent bootcamp grad and I'd love to continue my learning online. Having a subscription to egghead.io would be a huge help! -beccalee123</p>
+            </div>
+          </section>
         </section>
       </main>
       </>
