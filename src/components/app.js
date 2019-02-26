@@ -9,6 +9,7 @@ import Header from './header.js';
 import Footer from './footer.js';
 import Modal from './modules/modal.js';
 import Login from './login.js';
+import Pitch from './pitch.js';
 import {When} from "./conditionals.js";
 
 
@@ -35,6 +36,7 @@ class App extends React.Component {
         <Route exact path="/" component={Homepage}/>
         <Route exact path="/browse" component={Browse} />
         <Route exact path="/signup" component={Signup} />
+        <Route exact path="/request" component={Pitch} />
         <Route exact path="/account" component={Profile} />
         
         

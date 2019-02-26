@@ -1,15 +1,12 @@
 import React from 'react';
 import "../styles/base.scss";
 import "../styles/header.scss";
-import {If, Then, Else, When, Unless} from "./conditionals.js";
+import {If, Then, Else} from "./conditionals.js";
 import { Link } from "react-router-dom";
 
 
 
 class Header extends React.Component { 
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (
