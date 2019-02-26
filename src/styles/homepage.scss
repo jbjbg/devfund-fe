@@ -1,33 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Cutive+Mono|Overpass+Mono');
-@import url('https://fonts.googleapis.com/css?family=Gugi');
-
-$light: rgb(250, 247, 241);
-$medium: rgb(207, 202, 188);
-$dark: rgb(12, 12, 12);
-
-
-html, body {
-  height: 100%;
-  background: $light;
-}
-
-* {
-  box-sizing: border-box;
-  font-family: 'Cutive Mono', monospace;
-}
+@import "./variables.scss";
 
 h1 {
-  font-family: 'Gugi', cursive;
-  font-size: 8em;
   padding-top: 150px;
   font-weight: bold;
 }
 
 h2 {
-  font-family: 'Gugi', cursive;
-  font-size: 3em;
   margin: 40px;
 }
+
 #hero {
   display: block;
   height: 500px;
@@ -37,25 +18,15 @@ h2 {
 
 #about {
   height: 300px;
-}
 
-#about > h2 {
-  text-align: left;
+  h2 {
+    text-align: left;
+  }
 }
 
 h4 {
   font-size: 1.25em;
   font-weight: bold;
-}
-
-#aboutContent > div {
-  display: block;
-  min-width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background-color: gray;
-  margin-left: 20px;
-  margin-right: 20px;
 }
 
 p {
@@ -65,33 +36,43 @@ p {
 #aboutContent {
   display: flex;
   flex-direction: row;
+
+  div {
+    display: block;
+    min-width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: gray;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
 
 #recent {
   height: 500px;
   background-color: $medium;
-}
 
-#recent > h2 {
-  text-align: right;
-  padding-top: 30px;
-}
+  h2 {
+    text-align: right;
+    padding-top: 30px;
+  }
 
-#recent > section > div > img {
-  border-radius: 100%;
-  width: 100px;
-  height:100px;
+  section {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    margin: 30px 30px;
 
-}
+    div {
+      display: block;
 
-#recent > section > div {
-  display: block;
-}
-
-#recent > section {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  margin: 30px 30px
+      img {
+        border-radius: 100%;
+        width: 100px;
+        height:100px;
+      
+      }
+    }
+  }
 }
 
 #request {
@@ -103,21 +84,13 @@ p {
   margin-left: -20px;
 }
 
-#info > p {
-  margin: 5px 10px;
-}
+#info {
+  p {
+    margin: 5px 10px;
+  }
 
-#info > h4 {
-  margin: 5px 10px;
-}
+  h4 {
+    margin: 5px 10px;
+  }
 
-button {
-  width: 200px;
-  margin: 10px;
-  height: 50px;
-  font-size: 1.5em;
-  font-weight: bold;
-  border: none;
-  background-color: $medium;
-  box-shadow: 2px 2px rgba(0, 0, 0, 0.486);
 }

@@ -1,0 +1,37 @@
+@import "./variables.scss";
+
+html, body {
+  height: 100%;
+  background: $light;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: $bodyfont;
+}
+
+p {
+  font-size: 1.25em;
+}
+
+h1 {
+  font-family: $headingsfont;
+  font-size: 8em;
+  font-weight: bold;
+}
+
+h2 {
+  font-family: $headingsfont;
+  font-size: 3em;
+}
+
+button {
+  width: 200px;
+  margin: 10px;
+  height: 50px;
+  font-size: 1.5em;
+  font-weight: bold;
+  border: none;
+  background-color: $medium;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.486);
+}
