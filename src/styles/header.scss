@@ -21,7 +21,7 @@ nav {
     justify-content: space-evenly;
   }
 
-  a {
+  a, .signin {
     display: inline-block;
     line-height: 50px;
     text-decoration: none;
@@ -34,16 +34,7 @@ nav {
     color: $highlightOnBlack;
   }
 
-  p {
-    display: inline-block;
-    line-height: 50px;
-    text-decoration: none;
-    color: $light;
-    font-size: 1.25em;
-    font-family: $headingsfont;
-  }
-
-  p:hover {
+  .signin:hover {
     color: $highlightOnBlack;
   }
 }
