@@ -29,4 +29,8 @@ nav {
     font-size: 1.25em;
     font-family: $headingsfont;
   }
+
+  a:hover {
+    color: $highlightOnBlack;
+  }
 }
