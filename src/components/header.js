@@ -2,8 +2,16 @@ import React from 'react';
 import "../styles/base.scss";
 import "../styles/header.scss";
 import {If, Then, Else, When, Unless} from "./conditionals.js";
+import Login from './login.js';
+import Modal from './modules/modal.js';
 
-class Header extends React.Component {
+
+
+class Header extends React.Component { 
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <>
@@ -16,10 +24,10 @@ class Header extends React.Component {
             <a href="#">Account</a>
             <If condition="1">
               <Then>
-                <a href="#">Sign In</a>
+                <p onClick={this.props.toggleModal}>Sign In</p>
               </Then>
               <Else if condition="2">
-                <a href="#">Sign Out</a>
+                <p>Sign Out</p>
               </Else>
             </If>
           </div>

@@ -3,14 +3,26 @@ import React from "react";
 import '../styles/reset.scss';
 import '../styles/base.scss';
 import '../styles/homepage.scss';
+import Modal from './modules/modal.js';
+import Login from './login.js';
+import {When} from "./conditionals.js";
 
 
 
 class Homepage extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <>
       <main>
+      <When condition={this.props.showModal}>
+          <Modal title="Login to DevFund" close={this.props.toggleModal}>
+            <Login />
+          </Modal>
+        </When>
         <section id="hero">
           <h1>DevFund</h1>
           <button>Browse</button>

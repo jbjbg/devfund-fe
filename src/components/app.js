@@ -11,15 +11,23 @@ import Footer from './footer.js';
 
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { showModal: false };
+  }
+
+  toggleModal = () => {
+    this.setState({ showModal: !this.state.showModal });
+  };
+
   render() {
     return (
       <>
-        <Header />
+        <Header toggleModal={this.toggleModal}/>
         {/* <Signup /> */}
         {/* <Login /> */}
-        {/* <Nav /> */}
         {/* <Profile /> */}
-        <Homepage />
+        <Homepage showModal={this.state.showModal} toggleModal={this.toggleModal} />
         <Footer />
       </>
     );
