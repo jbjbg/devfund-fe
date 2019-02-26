@@ -9,9 +9,12 @@ class Header extends React.Component {
       <>
         <nav>
           <a href="#" id="logo">DF</a>
-          <a href="#">Request</a>
-          <a href="#">Browse</a>
-          <a href="#">Sign In</a>
+          <div>
+            <a href="#">Request</a>
+            <a href="#">Browse</a>
+            <a href="#">About</a>
+            <a href="#">Sign In</a>
+          </div>
         </nav>
       </>
     );

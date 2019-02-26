@@ -7,7 +7,10 @@ class Footer extends React.Component {
   render() {
     return (
       <>
-      <h2>DF</h2>
+      <footer>
+        <a href="#" id="logo">DF</a>
+        <p>&copy;2019 JBJBG </p>
+      </footer>
       </>
     );
   }
