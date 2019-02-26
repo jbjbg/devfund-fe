@@ -1,17 +1,14 @@
 import React from 'react';
+import Homepage from './homepage.js';
+
 
 
 class App extends React.Component {
   render() {
     return (
-      <div>
-        <header>
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-            Learn React
-        </header>
-      </div>
+      <>
+        <Homepage />
+      </>
     );
   }
 }

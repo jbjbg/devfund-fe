@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Cutive+Mono|Overpass+Mono');
+@import url('https://fonts.googleapis.com/css?family=Gugi');
+
+
+html, body {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Cutive Mono', monospace;
+}
+
+h1 {
+  font-family: 'Gugi', cursive;
+  font-size: 8em;
+  padding-top: 150px;
+  font-weight: bold;
+}
+
+h2 {
+  font-family: 'Gugi', cursive;
+  font-size: 3em;
+  margin: 40px;
+}
+#hero {
+  display: block;
+  height: 500px;
+  text-align: center;
+  background-image: url("../assets/abstract-architecture-background-38132.jpg");
+  // background-image: linear-gradient(to bottom right, black, white);
+}
+
+#about {
+  height: 300px;
+}
+
+#about > h2 {
+  text-align: left;
+}
+
+#aboutContent > div {
+  display: block;
+  min-width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: gray;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+p {
+  font-size: 1.25em;
+}
+
+#aboutContent {
+  display: flex;
+  flex-direction: row;
+}
+
+#recent {
+  height: 500px;
+}
+
+#recent > h2 {
+  text-align: right;
+}
+
+button {
+  width: 200px;
+  margin: 10px;
+  height: 50px;
+  font-size: 1.5em;
+  font-weight: bold;
+  border: none;
+  background-color: rgb(224, 224, 224);
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.486);
+}
