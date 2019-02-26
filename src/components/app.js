@@ -7,6 +7,9 @@ import Browse from './browse.js'
 import Homepage from './homepage.js';
 import Header from './header.js';
 import Footer from './footer.js';
+import Modal from './modules/modal.js';
+import Login from './login.js';
+import {When} from "./conditionals.js";
 
 
 
@@ -23,8 +26,13 @@ class App extends React.Component {
   render() {
     return (
       <>
+        <When condition={this.state.showModal}>
+          <Modal title="Login to DevFund" close={this.toggleModal}>
+            <Login />
+          </Modal>
+        </When>
         <Header toggleModal={this.toggleModal}/>
-        <Route exact path="/" render={() => <Homepage showModal={this.state.showModal} toggleModal={this.toggleModal} />}/>
+        <Route exact path="/" component={Homepage}/>
         <Route exact path="/browse" component={Browse} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/account" component={Profile} />
