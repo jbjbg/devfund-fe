@@ -1,28 +1,56 @@
 import React from 'react';
 import "../styles/base.scss";
 import "../styles/header.scss";
-import {If, Then, Else, When, Unless} from "./conditionals.js";
+import {If, Then, Else} from "./conditionals.js";
+import { Link } from "react-router-dom";
 
-class Header extends React.Component {
+
+
+class Header extends React.Component { 
+
   render() {
     return (
       <>
         <nav>
-          <a href="#" id="logo">DF</a>
+          <ul>
+          <li>
+            <Link to="/" id="logo">
+              DF
+            </Link>
+          </li>
+          </ul>
+          <ul>
           <div>
-            <a href="#">Request</a>
-            <a href="#">Browse</a>
-            <a href="#">About</a>
-            <a href="#">Account</a>
+          <li>
+            <Link to="/request">
+              Request
+            </Link>
+          </li>
+          <li>
+            <Link to="/browse">
+              Browse
+            </Link>
+          </li>
+          <li>
+            <Link to="/about">
+              About
+            </Link>
+          </li>
+          <li>
+            <Link to="/account">
+              Account
+            </Link>
+          </li>
             <If condition="1">
               <Then>
-                <a href="#">Sign In</a>
+                <li class="signin" onClick={this.props.toggleModal}>Sign In</li>
               </Then>
               <Else if condition="2">
-                <a href="#">Sign Out</a>
+                <li class="signin">Sign Out</li>
               </Else>
             </If>
           </div>
+          </ul>
         </nav>
       </>
     );

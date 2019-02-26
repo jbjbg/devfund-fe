@@ -7,6 +7,7 @@ import '../styles/homepage.scss';
 
 
 class Homepage extends React.Component {
+
   render() {
     return (
       <>

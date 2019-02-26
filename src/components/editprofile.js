@@ -36,7 +36,7 @@ class EditProfile extends React.Component {
               <input type="text" name="zip" required />
             </label>
             <label>
-              Gitbug:
+              GitHub:
               <input type="text" name="github"/>
             </label>
             <label>

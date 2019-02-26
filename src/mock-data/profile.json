@@ -1,0 +1,22 @@
+{
+  "user": [
+    {
+      "username": "Brent",
+      "firstname": "Brent",
+      "lastname": "Woodward",
+      "email": "bw@email.com",
+      "phone": "555-555-5555",
+      "address1": "55 this street",
+      "address2": "Unit 2b",
+      "city": "cityville",
+      "state": "tx",
+      "zip": "55545",
+      "github": "http://www.google.com",
+      "linkedin": "http://www.google.com",
+      "twitter": "http://www.google.com",
+      "blog": "http://www.google.com",
+      "image": "https://via.placeholder.com/150",
+      "bio": "As a new developer I am looking to sharpen my skills with Sass. I am not that great with design if I am honest, and want to be able to make other peoples visions a reality with my code."
+    }
+  ]
+}
