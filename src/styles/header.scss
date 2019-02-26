@@ -1,0 +1,26 @@
+@import "./variables.scss";
+
+nav {
+  height: 50px;
+  width: 100%;
+  background-color: $dark;
+  color: $light;
+  position: fixed;
+  display: grid;
+  grid-template-columns: 70% 1fr 1fr 1fr;
+
+  #logo {
+    font-size: 3em;
+    margin: 3px 0px 0px 10px;
+    display: inline-block;
+  }
+
+  a {
+    display: inline-block;
+    line-height: 50px;
+    text-decoration: none;
+    color: $light;
+    font-size: 1.25em;
+    font-family: $headingsfont;
+  }
+}

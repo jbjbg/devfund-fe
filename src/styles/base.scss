@@ -3,11 +3,12 @@
 html, body {
   height: 100%;
   background: $light;
+  font-family: $bodyfont;
+
 }
 
 * {
   box-sizing: border-box;
-  font-family: $bodyfont;
 }
 
 p {
