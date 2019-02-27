@@ -23,10 +23,6 @@ class Browse extends React.Component {
       showModal: false
     }
 
-  toggleModal = () => {
-    this.setState({ showModal: !this.state.showModal });
-  };
-
     window.onscroll = () => {
       const {
         loadPitches,
@@ -44,6 +40,10 @@ class Browse extends React.Component {
       }
     }
   }
+
+  toggleModal = () => {
+    this.setState({ showModal: !this.state.showModal });
+  };
 
   componentWillMount(){
     this.loadPitches();
@@ -87,6 +87,7 @@ class Browse extends React.Component {
       isLoading,
       users,
     } = this.state;
+    
     return(
       <>
         <When condition={this.state.showModal}>
@@ -106,8 +107,7 @@ class Browse extends React.Component {
         </ul>
       </>
     )}
-  }
-    
+
 }
 
 export default Browse;

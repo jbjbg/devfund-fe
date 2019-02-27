@@ -11,6 +11,7 @@ import Modal from './modules/modal.js';
 import Login from './login.js';
 import Pitch from './pitch.js';
 import {When} from "./conditionals.js";
+import LoginContext from './auth/context.js';
 
 
 
@@ -26,7 +27,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <>
+      <LoginContext>
         <When condition={this.state.showModal}>
           <Modal title="Login to DevFund" close={this.toggleModal}>
             <Login />
@@ -38,10 +39,8 @@ class App extends React.Component {
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/request" component={Pitch} />
         <Route exact path="/account" component={Profile} />
-        
-        
         <Footer />
-      </>
+      </LoginContext>
     );
   }
 }
