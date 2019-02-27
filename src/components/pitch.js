@@ -26,13 +26,6 @@ class Pitch extends React.Component{
   render() {
     return(
       <>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
       <form onSubmit={this.handleSubmit}>
         <fieldset>
           <span>Service Requested: </span>
