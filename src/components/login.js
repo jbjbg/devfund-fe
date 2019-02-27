@@ -1,7 +1,6 @@
 import superagent from "superagent";
 import React from "react";
 import { LoginContext } from "./auth/context.js";
-import { When } from "./conditionals.js";
 import { Link } from "react-router-dom";
 
 const API = "https://dev-fund.herokuapp.com";

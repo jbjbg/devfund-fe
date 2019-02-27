@@ -1,9 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import superagent from 'superagent';
+
+const API = "https://dev-fund.herokuapp.com";
 
 class Signup extends React.Component {
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+  
   handleSubmit = e => {
     e.preventDefault();
+    let data = this.state;
+    superagent
+      .post(`${API}/signup`)
+      .send(data)
+      .then( response => {
+        console.log('look at this!', response)
+      })
+      .catch(console.error);
   }
 
   componentDidMount() {
@@ -25,56 +39,57 @@ class Signup extends React.Component {
             <legend>Login Information:</legend>
             <label>
               Username:
-              <input type="text" name="username" required />
+              <input type="text" name="username" onChange={this.handleChange} required />
             </label>
             <label>
               Password:
-              <input type="text" name="password" required />
+              <input type="password" name="password" onChange={this.handleChange} required />
             </label>
           </fieldset>
           <fieldset>
             <legend>Personal Information:</legend>
             <label>
               First name:
-              <input type="text" name="firstName" required />
+              <input type="text" name="firstname" onChange={this.handleChange} required />
             </label>
             <label>
               Last name:
-              <input type="text" name="lastName" required />
+              <input type="text" name="lastname" onChange={this.handleChange} required />
             </label>
             <label>
               Email:
-              <input type="text" name="email" required />
+              <input type="text" name="email" onChange={this.handleChange} required />
             </label>
             <label>
               Phone:
-              <input type="text" name="phone" />
+              <input type="text" name="phone" onChange={this.handleChange} />
             </label>
             <label>
               Address 1:
-              <input type="text" name="address1" required />
+              <input type="text" name="address1" onChange={this.handleChange} />
             </label>
             <label>
               Address 2:
-              <input type="text" name="address2" />
+              <input type="text" name="address2" onChange={this.handleChange} />
             </label>
             <label>
               City:
-              <input type="text" name="city" required />
+              <input type="text" name="city" onChange={this.handleChange} required />
             </label>
             <label>
               State:
-              <input type="text" name="state" required />
+              <input type="text" name="state" onChange={this.handleChange} />
             </label>
             <label>
               Zip:
-              <input type="text" name="zip" required />
+              <input type="text" name="zip" onChange={this.handleChange} />
             </label>
           </fieldset>
           <button type="submit">
-          <Link to="/account">
+          {/* <Link to="/account"> */}
             Submit
-            </Link></button>
+            {/* </Link> */}
+            </button>
         </form>
       </>
     )

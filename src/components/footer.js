@@ -8,7 +8,7 @@ class Footer extends React.Component {
     return (
       <>
       <footer>
-        <a href="#" id="logo">DF</a>
+        <a href="/" id="logo">DF</a>
         <p>&copy;2019 JBJBG </p>
       </footer>
       </>

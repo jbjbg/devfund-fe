@@ -14,7 +14,6 @@ class Pitch extends React.Component{
   handleHide = () => this.setState({show: false})
 
   handleSubmit = () => {
-    var num = 1;
   }
 
   handleChange = (e) => {

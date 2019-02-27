@@ -1,6 +1,5 @@
 import React from 'react';
 import cookie from 'react-cookies';
-import querystring from 'querystring';
 
 export const LoginContext = React.createContext();
 

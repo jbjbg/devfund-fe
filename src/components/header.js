@@ -41,13 +41,13 @@ class Header extends React.Component {
                     </li>
                   </When>
                   <When condition={!context.loggedIn}>
-                    <li class="signin" onClick={this.props.toggleModal}>
+                    <li className="signin" onClick={this.props.toggleModal}>
                       Sign In
                     </li>
                   </When>
                   <When condition={context.loggedIn}>
                     <li
-                      class="signin"
+                      className="signin"
                       onClick={e => this.logout(e, context.logout)}
                     >
                       Sign Out
