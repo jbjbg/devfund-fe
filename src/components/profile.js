@@ -3,6 +3,10 @@ import data from '../mock-data/profile.json';
 
 class Profile extends React.Component{
 
+  handleUpdate = () => {
+
+  }
+
   render() {
     return(
       <>
@@ -25,8 +29,8 @@ class Profile extends React.Component{
         )
       }
       </div>
-        <form onSubmit={this.handleEditSubmit}>
-          <input type="submit" value="Submit" />
+        <form onSubmit={this.handleUpdate}>
+          <input type="submit" value="Update" />
         </form>
       </>
     )
