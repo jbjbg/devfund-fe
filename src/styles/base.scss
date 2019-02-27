@@ -16,17 +16,6 @@ p {
   font-size: 1.25em;
 }
 
-h1 {
-  font-family: $headingsfont;
-  font-size: 8em;
-  font-weight: bold;
-}
-
-h2 {
-  font-family: $headingsfont;
-  font-size: 3em;
-}
-
 button {
   width: 200px;
   margin: 10px;
@@ -40,4 +29,10 @@ button {
 
 button:hover {
   background-color: $highlight;
+}
+
+.hero {
+  display: block;
+  height: 550px;
+  text-align: center;
 }
