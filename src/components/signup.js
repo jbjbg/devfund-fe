@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Signup extends React.Component {
-  // handleSubmit = form => {
-    
-  // }
+  handleSubmit = e => {
+    e.preventDefault();
+  }
 
   componentDidMount() {
     this.props.closeModal();
@@ -12,6 +13,13 @@ class Signup extends React.Component {
   render() {
     return(
       <>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
         <form onSubmit={this.handleSubmit}>
           <fieldset>
             <legend>Login Information:</legend>
@@ -63,7 +71,10 @@ class Signup extends React.Component {
               <input type="text" name="zip" required />
             </label>
           </fieldset>
-          <input type="submit" value="Submit" />
+          <button type="submit">
+          <Link to="/account">
+            Submit
+            </Link></button>
         </form>
       </>
     )

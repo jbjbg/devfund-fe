@@ -25,6 +25,9 @@ class Detail extends React.Component {
         <p>LinkedIn: <a href={profile.linkedin}>{profile.linkedin}</a></p>
         <p>Twitter: <a href={profile.twitter}>{profile.twitter}</a></p>
         <p>Blog: <a href={profile.blog}>{profile.blog}</a></p>
+        <button>
+          DevFund It!
+        </button>
       </>
     )
   }

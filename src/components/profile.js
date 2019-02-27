@@ -1,11 +1,8 @@
 import React from 'react';
 import data from '../mock-data/profile.json';
+import {Link} from 'react-router-dom';
 
 class Profile extends React.Component{
-
-  handleUpdate = () => {
-
-  }
 
   render() {
     return(
@@ -29,9 +26,9 @@ class Profile extends React.Component{
         )
       }
       </div>
-        <form onSubmit={this.handleUpdate}>
-          <input type="submit" value="Update" />
-        </form>
+          <Link to="/editaccount">
+          Edit
+          </Link>
       </>
     )
   }

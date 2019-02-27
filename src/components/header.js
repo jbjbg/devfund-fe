@@ -6,6 +6,11 @@ import { Link } from "react-router-dom";
 import { LoginContext } from "./auth/context.js";
 
 class Header extends React.Component {
+
+  logout = (e, logoutMethodFromProvider) => {
+    logoutMethodFromProvider();
+  };
+
   render() {
     return (
       <LoginContext.Consumer>
