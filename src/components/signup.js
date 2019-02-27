@@ -5,6 +5,10 @@ class Signup extends React.Component {
     
   // }
 
+  componentDidMount() {
+    this.props.closeModal();
+  }
+
   render() {
     return(
       <>

@@ -1,11 +1,31 @@
+import superagent from 'superagent';
 import React from 'react';
+import { LoginContext } from './auth/context.js';
+import {When} from './conditionals.js';
+import { Link } from "react-router-dom";
+
+const API = 'https://dev-fund.herokuapp.com';
 
 class Login extends React.Component {
-  //login state?
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
 
-  // handleSubmit = form => {
-    
-  // }
+  handleSubmit = (e, loginMethodFromContext) => {
+    e.preventDefault();
+    superagent
+      .post(`${API}/signin`)
+      .auth(this.state.username, this.state.password)
+      .then(response => {
+        let token = response.text;
+        loginMethodFromContext(token);
+      })
+      .catch(console.error);
+  };
+
+  logout = (e, logoutMethodFromProvider) => {
+    logoutMethodFromProvider();
+  };
 
   render() {
     return(
@@ -24,6 +44,14 @@ class Login extends React.Component {
           </fieldset>
           <input type="submit" value="Submit" />
         </form>
+        <section>
+          <p>Don't have an account yet?</p>
+          <button>
+            <Link to="/signup">
+            Sign Up!
+            </Link>
+          </button>
+        </section>
       </>
     )
   }

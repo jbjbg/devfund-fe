@@ -1,58 +1,59 @@
-import React from 'react';
+import React from "react";
 import "../styles/base.scss";
 import "../styles/header.scss";
-import {If, Then, Else} from "./conditionals.js";
+import { When } from "./conditionals.js";
 import { Link } from "react-router-dom";
+import { LoginContext } from "./auth/context.js";
 
-
-
-class Header extends React.Component { 
-
+class Header extends React.Component {
   render() {
     return (
-      <>
-        <nav>
-          <ul>
-          <li>
-            <Link to="/" id="logo">
-              DF
-            </Link>
-          </li>
-          </ul>
-          <ul>
-          <div>
-          <li>
-            <Link to="/request">
-              Request
-            </Link>
-          </li>
-          <li>
-            <Link to="/browse">
-              Browse
-            </Link>
-          </li>
-          <li>
-            <Link to="/about">
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to="/account">
-              Account
-            </Link>
-          </li>
-            <If condition="1">
-              <Then>
-                <li class="signin" onClick={this.props.toggleModal}>Sign In</li>
-              </Then>
-              <Else if condition="2">
-                <li class="signin">Sign Out</li>
-              </Else>
-            </If>
-          </div>
-          </ul>
-        </nav>
-      </>
+      <LoginContext.Consumer>
+        {context => {
+          return (
+            <nav>
+              <ul>
+                <li>
+                  <Link to="/" id="logo">
+                    DF
+                  </Link>
+                </li>
+              </ul>
+              <ul>
+                <div>
+                  <li>
+                    <Link to="/request">Request</Link>
+                  </li>
+                  <li>
+                    <Link to="/browse">Browse</Link>
+                  </li>
+                  <li>
+                    <Link to="/about">About</Link>
+                  </li>
+                  <When condition={context.loggedIn}>
+                    <li>
+                      <Link to="/account">Account</Link>
+                    </li>
+                  </When>
+                  <When condition={!context.loggedIn}>
+                    <li class="signin" onClick={this.props.toggleModal}>
+                      Sign In
+                    </li>
+                  </When>
+                  <When condition={context.loggedIn}>
+                    <li
+                      class="signin"
+                      onClick={e => this.logout(e, context.logout)}
+                    >
+                      Sign Out
+                    </li>
+                  </When>
+                </div>
+              </ul>
+            </nav>
+          );
+        }}
+      </LoginContext.Consumer>
     );
   }
 }

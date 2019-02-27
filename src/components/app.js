@@ -25,6 +25,10 @@ class App extends React.Component {
     this.setState({ showModal: !this.state.showModal });
   };
 
+  closeModal = () => {
+    this.setState({ showModal: false });
+  };
+
   render() {
     return (
       <LoginContext>
@@ -36,7 +40,7 @@ class App extends React.Component {
         <Header toggleModal={this.toggleModal}/>
         <Route exact path="/" component={Homepage}/>
         <Route exact path="/browse" component={Browse} />
-        <Route exact path="/signup" component={Signup} />
+        <Route exact path="/signup" render={() => <Signup closeModal={this.closeModal} />} />
         <Route exact path="/request" component={Pitch} />
         <Route exact path="/account" component={Profile} />
         <Footer />
