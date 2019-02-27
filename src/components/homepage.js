@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import '../styles/reset.scss';
 import '../styles/base.scss';
@@ -14,8 +15,14 @@ class Homepage extends React.Component {
       <main>
         <section id="hero">
           <h1>DevFund</h1>
-          <button>Browse</button>
-          <button>Request</button>
+          <button>
+            <Link to="/browse">Browse
+            </Link>
+          </button>
+          <button>
+            <Link to="/request">Request
+            </Link>
+          </button>
         </section>
         <section id="about">
           <h2>What it is</h2>
