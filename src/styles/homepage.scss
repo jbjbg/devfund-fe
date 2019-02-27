@@ -48,6 +48,13 @@ p {
   }
 }
 
+a {
+  font-size: 1em;
+  font-weight: bold;
+  text-decoration: none;
+  color: $dark;
+}
+
 #recent {
   height: 500px;
   background-color: $medium;
