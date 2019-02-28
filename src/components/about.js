@@ -14,7 +14,7 @@ const About = () => {
         </section>
 
         <h2> Mission </h2>
-        <p>DevFund was borne from a desire to help the developer community at large, and particularly new developers entering the field. We've been so appreciative of the help we've recieved from more senior members of the community, and as we gain experience in the field, we wanted to create an even easier way to give back. DevFund allows new devs to request help funding learning resources that will help them become awesome devs, and lets folks looking to help people breaking into the industry make a difference. </p>
+        <p>DevFund was born from a desire to help the developer community at large, and particularly new developers entering the field. We've been so appreciative of the help we've recieved from more senior members of the community, and as we gain experience in the field, we wanted to create an even easier way to give back. DevFund allows new devs to request help funding learning resources that will help them become awesome devs, and lets folks looking to help people breaking into the industry make a difference. </p>
 
         <h2>Meet the Team</h2>
 
