@@ -87,8 +87,10 @@ class Pitch extends React.Component {
                     {fireRedirect && <Redirect to={"/browse"} />}
                   </Then>
                   <Else>
-                    <p>Sign in in order to get DevFunded!</p>
-                    <button onClick={this.toggleModal}>Sign In</button>
+                    <div id="loggedOut">
+                      <p>Sign in to request DevFunding!</p>
+                      <button onClick={this.toggleModal}>Sign In</button>
+                    </div>
                     <When condition={this.state.showModal}>
                       <Modal title="Login to DevFund" close={this.toggleModal}>
                         <Login toggleModal={this.toggleModal}/>

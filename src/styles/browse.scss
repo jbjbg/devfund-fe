@@ -28,11 +28,62 @@
     text-align: center;
   }
 
-  ul {
-    width: 85%;
-    margin: 10px auto;
+  ul{
+    width: 100%;
+    margin: 0px auto;
+
+    li{
+      width: 80%;
+      margin: 0px auto 25px auto;
+      padding: 10px;
+      display: grid;
+      grid-template-columns: 150px 1fr 175px;
+      text-align: justify;
+      border-bottom: 1px solid $dark;
+    }
+
+
+    #photoAndName{
+      text-align: center;
+
+      img {
+        border-radius: 50%;
+      }
+
+      .username {
+        font-family: $headingsfont;
+        margin-bottom: 25px;
+      }
+    }
+
+    #pitch{
+      width: 90%;
+      margin: 10px auto;
+
+      .pitchheader {
+        font-family: $headingsfont;
+        margin: 10px 0px;
+      }
+
+    }
+
+    button {
+      width: 175px;
+      margin-top: 50px;
+    }
+
+
+
 
   }
+
+  // <li key={i}>
+  //         <img src={pitch.data[0].profileImage} alt="profile pic" />
+  //         <p>{pitch.data[0].username}</p>
+  //         <h4>{pitch.data[0].item} - {pitch.data[0].cost}</h4>
+  //         <p>{pitch.data[0].why.slice(0, 150) + '...'}</p>
+  //           <button onClick={(e) => this.handleClick(e, pitch.data[0])}>Click Me!</button>
+  //         </li> 
 
 
 }
