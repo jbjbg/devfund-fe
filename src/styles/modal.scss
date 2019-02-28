@@ -1,3 +1,6 @@
+@import "./variables.scss";
+@import "./variables.scss";
+
 .modal-open {
   overflow: hidden;
 }
@@ -11,7 +14,7 @@
   z-index:100;
 
   &:after {
-    background:#000;
+    background: $dark;
     bottom:0;
     content:' ';
     left:0;
@@ -22,7 +25,7 @@
 
   }
   > div {
-    background:#fff;
+    background: $light;
     box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
     box-sizing:border-box;
     border-radius: 5px;
@@ -38,31 +41,40 @@
     z-index:1000;
 
     > header {
-      background: #ccc;
       border-bottom: 0 none;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
-      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
       display:flex;
-      font-size:1em;
+      font-size:2em;
+      font-family: $headingsfont;
+      text-align: center;
       font-weight:bold;
       height:1.5em;
       line-height:1.5em;
 
+      > p {
+        font-size: .75em;
+        margin-right: 10px
+      }
+
+
         span {
-          color:#000;
+          color: $dark;
           flex:1;
+          margin-top: 4%;
+          margin-right: -10px;
           }
         & a {
           background: inherit;
           border-top-right-radius: 5px;
+          // font-size: 1em;
           cursor:pointer;
           order: 1;
           text-align:center;
           width: 1.5em;
 
         &:hover {
-          background:#000;
+          background: $dark;
           color:#fff;
         }
         }
@@ -70,7 +82,55 @@
     > div {
       flex:1;
       overflow:auto;
-      padding:25px;
+      padding:15px;
+    }
+
+    #login {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      
+      form {
+        width: 90%;
+        margin: 40px auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center
+      }
+    
+      fieldset {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      label {
+        font-size: 1.5em;
+      }
+
+      legend {
+        font-size: 2em;
+      }
+      
+      select, input {
+        margin: 5px auto 20px auto;
+        height: 30px;
+        width: 40%;
+        font-size: 1em;
+      }
+      
+      button {
+        height: 50px;
+        margin: 20px auto 0px auto;
+      }
+
+      p {
+        text-align: center;
+        font-weight: bold;
+      }
+      
     }
   }
 }
