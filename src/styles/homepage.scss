@@ -12,7 +12,7 @@ h1 {
 h2 {
   font-family: $headingsfont;
   font-size: 3em;
-  margin: 40px;
+  margin: 40px 10%;
 }
 
 #homepage {
@@ -89,8 +89,8 @@ a {
   section {
     display: grid;
     grid-template-columns: 200px 1fr;
-    margin: 30px 5%;
-    width: 90%;
+    margin: 30px auto;
+    width: 80%;
 
     div {
       display: block;
