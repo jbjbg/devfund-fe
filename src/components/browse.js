@@ -23,7 +23,6 @@ class Browse extends React.Component {
   }
 
   componentDidMount = () => {
-    //run a superagent getAll request
     superagent
     .get(`${this.state.API}/api/bulletin`)
     .then( res => {
