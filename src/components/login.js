@@ -23,8 +23,9 @@ class Login extends React.Component {
       .post(`${API}/signin`)
       .auth(this.state.username, this.state.password)
       .then(response => {
-        let token = response.text;
-        loginMethodFromContext(token);
+        console.log('user from login', response.body)
+        let user = response.body;
+        loginMethodFromContext(user);
       })
       .catch(console.error);
       this.props.toggleModal();

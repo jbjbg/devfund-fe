@@ -1,5 +1,5 @@
 import React from 'react';
-
+import superagent from 'superagent';
 import pitches from '../mock-data/pitches.json';
 import {When} from "./conditionals.js";
 import Modal from './modules/modal.js';
@@ -17,8 +17,19 @@ class Browse extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      showModal: false
+      showModal: false,
+      pitchList: {},
     }
+  }
+
+  componentDidMount = async () => {
+    //run a superagent getAll request
+    await superagent
+    .get(`${URL}/pitch`)
+    .then( res => {
+      this.setState({pitchList: res.body})
+    })
+    .catch(console.error);
   }
 
   toggleModal = () => {

@@ -1,23 +1,32 @@
 import React from 'react';
 import cookie from 'react-cookies';
+import superagent from 'superagent';
 
 export const LoginContext = React.createContext();
+
+const URL = "https://dev-fund.herokuapp.com";
 
 class LoginProvider extends React.Component {
   constructor(props){
     super(props);
-    // const qs = new URLSearchParams(location.search);
     const cookieToken = cookie.load('auth');
     const token = cookieToken || null;
     this.state = {
-      // login: false,
-      // toggleLogin: this.toggleLogin,
       loggedIn: !!token,
       token: token,
       login: this.login,
       logout: this.logout,
-      user: {}
+      user: {},
     };
+  }
+
+  getUser = async () => {
+    let result = await superagent
+      .get(`${URL}/user/${this.state.user.id}`)
+      .auth(this.state.token)
+
+    console.log('This is the user', result.body)
+    this.setState({user: result.body})
   }
 
   setLoginState = loggedIn => {
@@ -25,9 +34,11 @@ class LoginProvider extends React.Component {
     this.setState({loggedIn, token});
   }
 
-  login = token => {
-    cookie.save('auth', token);
+  login = user => {
+    cookie.save('auth', user.token);
+    this.setState({user: {id: user.id} });
     this.setLoginState(true);
+    this.getUser();
   }
 
   logout = () => {
