@@ -40,6 +40,10 @@ class EditProfile extends React.Component {
 
         <form onSubmit={this.submitForm}>
             <label>
+              Upload:
+               <input type="file" name="pic" accept="image/*"></input>
+            </label>
+            <label>
               Name:
               <input type="text" name="firstName" defaultValue={user.firstname} required />
               <input type="text" name="lastName" defaultValue={user.lastname} required />
