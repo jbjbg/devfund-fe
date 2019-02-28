@@ -1,10 +1,11 @@
 import React from 'react';
 import data from '../mock-data/profile.json';
+import {Link} from 'react-router-dom';
 
 let user = {...data.user[0]};
 
 class EditProfile extends React.Component {
-  // handleSubmit = form => {
+  // handleUpdate = form => {
     
   // }
 
@@ -26,7 +27,7 @@ class EditProfile extends React.Component {
       <br />
       <br />
 
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleUpdate}>
             <label>
               Name:
               <input type="text" name="firstName" defaultValue={user.firstname} required />
@@ -73,7 +74,11 @@ class EditProfile extends React.Component {
               About Me:
               <textarea name="aboutme" rows="5" cols="50"  defaultValue={user.bio} />
             </label>
-          <input type="submit" value="Submit" />
+          <button type="submit">
+            <Link to="/account">
+              Submit
+            </Link>
+          </button>
         </form>
       </>
     )

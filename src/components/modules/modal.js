@@ -8,7 +8,7 @@ const Modal = props => {
       <div>
         <header>
           <span className="title">{props.title}</span>
-          <a onClick={props.close}>X</a>
+          <p onClick={props.close}>X</p>
         </header>
         <div>{props.children}</div>
       </div>

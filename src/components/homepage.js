@@ -15,14 +15,16 @@ class Homepage extends React.Component {
       <main>
         <section class="hero" id="homepage">
           <h1>DevFund</h1>
+            <Link to="/browse">
           <button>
-            <Link to="/browse">Browse
-            </Link>
+          Browse
           </button>
+            </Link>
+            <Link to="/request">
           <button>
-            <Link to="/request">Request
-            </Link>
+          Request
           </button>
+            </Link>
         </section>
         <section id="about">
           <h2>What it is</h2>
