@@ -11,11 +11,7 @@ class Auth extends React.Component {
       <LoginContext.Consumer>
         {context => {
           let user = context.token ? jwt.verify(context.token, 'foobar') : {};
-          let okToRender =
-            context.loggedIn &&
-            (this.props.capability
-              ? user.capabilities.includes(this.props.capability)
-              : true);
+          let okToRender = context.loggedIn && (user !== {});
 
           return <When condition={okToRender}>{this.props.children}</When>;
         }}

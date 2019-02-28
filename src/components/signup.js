@@ -26,7 +26,8 @@ class Signup extends React.Component {
       .post(`${API}/signup`)
       .send(data)
       .then(res => {
-        loginMethodFromContext(res.text)
+        console.log(res.body)
+        loginMethodFromContext(res.body)
       })
       .catch(console.error);
   };
