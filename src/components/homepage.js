@@ -13,7 +13,7 @@ class Homepage extends React.Component {
     return (
       <>
       <main>
-        <section class="hero" id="homepage">
+        <section className="hero" id="homepage">
           <h1>DevFund</h1>
             <Link to="/browse">
           <button>

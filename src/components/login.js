@@ -8,6 +8,9 @@ const API = "https://dev-fund.herokuapp.com";
 class Login extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      am: 'not useless'
+    }
   }
 
   handleChange = e => {
