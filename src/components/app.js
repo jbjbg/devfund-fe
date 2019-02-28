@@ -6,8 +6,8 @@ import LoginContext from './auth/context.js';
 import Modal from './modules/modal.js';
 
 import Signup from './signup.js';
-import Profile from './profileWIP.js'
-import Browse from './browse.js'
+import Profile from './profile.js';
+import Browse from './browse.js';
 import Homepage from './homepage.js';
 import Header from './header.js';
 import Footer from './footer.js';
