@@ -35,7 +35,7 @@ class App extends React.Component {
     return (
       <LoginContext>
         <When condition={this.state.showModal}>
-          <Modal title="Login to DevFund" close={this.toggleModal}>
+          <Modal title="Log In to DevFund" close={this.toggleModal}>
             <Login toggleModal={this.toggleModal} />
           </Modal>
         </When>

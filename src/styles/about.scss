@@ -1,0 +1,90 @@
+@import "./variables.scss";
+
+#aboutPage {
+
+  #about{
+    background-image: url("../assets/abstract-architecture-background-38132-flip.jpg");
+  }
+  
+  .hero {
+    display: block;
+    height: 550px;
+    text-align: center;
+  }
+  
+  h1 {
+    padding-top: 200px;
+    font-weight: bold;
+    font-size: 6em;
+    padding-bottom: 20px;
+  }
+
+  h3 {
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  p {
+    display: block;
+    width: 75%;
+    margin: 10px auto;
+    text-align: justify;
+  }
+
+  .name{
+    font-family: $headingsfont;
+    font-size: 2em;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  section{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-bottom: 100px;
+
+    p {
+      width: 70%;
+      display: block;
+
+    }
+
+    img{
+      display: block;
+      width: 200px;
+      margin: 10px auto;
+    }
+
+    .social{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin-left: 5%;
+
+      a{
+        margin-right: 10px;
+      }
+      
+      .socialicon{
+        width: 30px;
+        height: 30px;
+      }
+
+      .socialicon:hover{
+        background-color: $highlight;
+        border-radius: 30%;
+      }
+
+    }
+
+  }
+
+
+
+
+
+}

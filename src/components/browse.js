@@ -4,6 +4,10 @@ import {When} from "./conditionals.js";
 import Modal from './modules/modal.js';
 import Detail from './detail.js';
 
+import "../styles/reset.scss";
+import "../styles/base.scss";
+import "../styles/browse.scss";
+
 
 
 //limit characters on the Why - end with a ... to show more is available.
@@ -40,10 +44,16 @@ class Browse extends React.Component {
   render() {
     return(
       <>
-        <When condition={this.state.showModal}>
-          <Modal title="" close={this.toggleModal}>
-            <Detail pitch={this.state.pitch}/>
-          </Modal>
+        <main id="browsePage">
+          <section className="hero" id="browse">
+            <h1>DevFund a Request</h1>
+            <h3>You can make a big difference!</h3>
+          </section>
+          <h2>All Pitches</h2>
+          <When condition={this.state.showModal}>
+            <Modal title="" close={this.toggleModal}>
+              <Detail/>
+            </Modal>
         </When>
         <ul>{this.state.pitchList.map((pitch, i) =>
           <li key={i}>
@@ -53,8 +63,9 @@ class Browse extends React.Component {
           <p>{pitch.data[0].why.slice(0, 150) + '...'}</p>
             <button onClick={(e) => this.handleClick(e, pitch.data[0])}>Click Me!</button>
           </li> 
-          )}
-        </ul>
+            )}
+          </ul>
+        </main>
       </>
     )}
 }

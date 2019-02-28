@@ -34,36 +34,37 @@ class Login extends React.Component {
         {context => {
           return (
             <>
-              <form onSubmit={e => this.handleSubmit(e, context.login)}>
-                <fieldset>
-                  <legend>Login Information:</legend>
-                  <label>
-                    Username:
-                    <input
-                      type="text"
-                      name="username"
-                      onChange={this.handleChange}
-                      required
-                    />
-                  </label>
-                  <label>
-                    Password:
-                    <input
-                      type="password"
-                      name="password"
-                      onChange={this.handleChange}
-                      required
-                    />
-                  </label>
-                </fieldset>
-                <input type="submit" value="Submit" />
-              </form>
-              <section>
-                <p>Don't have an account yet?</p>
-                <button>
-                  <Link to="/signup">Sign Up!</Link>
-                </button>
-              </section>
+              <div id="login">
+                <form onSubmit={e => this.handleSubmit(e, context.login)}>
+                  <fieldset>
+                    <label>
+                      Username:
+                      <input
+                        type="text"
+                        name="username"
+                        onChange={this.handleChange}
+                        required
+                      />
+                    </label>
+                    <label>
+                      Password:
+                      <input
+                        type="password"
+                        name="password"
+                        onChange={this.handleChange}
+                        required
+                      />
+                    </label>
+                  </fieldset>
+                  <button type="submit" value="Submit"> Submit </button>
+                </form>
+                <section>
+                  <p>Don't have an account yet?</p>
+                  <button>
+                    <Link to="/signup">Sign Up!</Link>
+                  </button>
+                </section>
+              </div>
             </>
           );
         }}

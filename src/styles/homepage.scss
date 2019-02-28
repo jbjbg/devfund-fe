@@ -1,7 +1,7 @@
 @import "./variables.scss";
 
 h1 {
-  padding-top: 200px;
+  padding-top: 18%;
   font-weight: bold;
   font-family: $headingsfont;
   font-size: 8em;
@@ -20,7 +20,7 @@ h2 {
 }
 
 #about {
-  height: 300px;
+  height: 100%;
 
   h2 {
     text-align: left;
@@ -37,17 +37,36 @@ p {
 }
 
 #aboutContent {
-  display: flex;
-  flex-direction: row;
+  display: block;
+  margin: 10px 10%;
+  width: 90%;
+
+  img {
+    height: 175px;
+    margin-left: 10px;
+    margin-right: 20px;
+    margin-top: 10px;
+  }
 
   div {
-    display: block;
-    min-width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background-color: gray;
-    margin-left: 20px;
-    margin-right: 20px;
+    display: flex;
+    flex-direction: row;
+
+    div {
+      display: block;
+      min-width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background-color: $highlight;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  }
+
+  p {
+    width: 60%;
+    margin-top: 20px;
+    text-align: justify;
   }
 }
 
@@ -59,7 +78,7 @@ a {
 }
 
 #recent {
-  height: 500px;
+  height: 100%;
   background-color: $medium;
 
   h2 {
@@ -70,7 +89,8 @@ a {
   section {
     display: grid;
     grid-template-columns: 200px 1fr;
-    margin: 30px 30px;
+    margin: 30px 5%;
+    width: 90%;
 
     div {
       display: block;
@@ -94,13 +114,19 @@ a {
   margin-left: -20px;
 }
 
-#info {
+.info {
   p {
     margin: 5px 10px;
+    text-align: justify;
+
   }
 
   h4 {
     margin: 5px 10px;
   }
 
+}
+
+#last {
+  margin-bottom: 30px;
 }

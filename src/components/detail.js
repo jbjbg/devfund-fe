@@ -6,7 +6,7 @@ class Detail extends React.Component {
   }
 
   render() {
-    return(
+    return (
       <>
         <h2>Request Details</h2>
         <p>Item: {this.props.pitch.item}</p>
@@ -23,9 +23,9 @@ class Detail extends React.Component {
         <p>LinkedIn: <a href={this.props.pitch.linkedin}>{this.props.pitch.linkedin}</a></p>
         <p>Twitter: <a href={this.props.pitch.twitter}>{this.props.pitch.twitter}</a></p>
         <p>Blog: <a href={this.props.pitch.blog}>{this.props.pitch.blog}</a></p>
-        <button>
-          DevFund It!
-        </button>
+        <form action="https://dev-fund.herokuapp.com/pay" method="post">
+        <button type="submit" value="Purchase">DevFund It!</button>
+        </form>
       </>
     )
   }
