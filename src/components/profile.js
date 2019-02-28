@@ -3,13 +3,17 @@ import data from '../mock-data/profile.json';
 import {Link} from 'react-router-dom';
 
 class Profile extends React.Component{
-
+//image src for profile picture will need to be a variable
   render() {
     return(
       <>
       <div>{data.user.map( (user) =>
         <>
-          <img src={user.image} alt={user.username} />
+           <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+          <img src={require("../assets/people/george.jpeg")} alt={user.username} width="250" height="250"/>
           <p>Name: {user.firstname} {user.lastname}</p>
           <p>Username: {user.username}</p>
           <p>Email: {user.email}</p>
