@@ -30,7 +30,7 @@ class Browse extends React.Component {
           </Modal>
         </When>
         <ul>{pitches.data.map((pitch, i) => 
-          <li id={i}>
+          <li key={i}>
           <img src={pitch.image} alt="profile pic" />
           <p>{pitch.username}</p>
           <h4>{pitch.item} - {pitch.cost}</h4>

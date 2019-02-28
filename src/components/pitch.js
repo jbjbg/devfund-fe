@@ -15,7 +15,7 @@ class Pitch extends React.Component {
     super(props);
     this.state = {
       show: false,
-      value: null,
+      value: 'default',
       fireRedirect: false,
       showModal: false
     };
@@ -46,7 +46,7 @@ class Pitch extends React.Component {
     return (
       <>
         <main id="pitchPage">
-          <section class="hero" id="pitch">
+          <section className="hero" id="pitch">
             <h1>Make a Request</h1>
             <h3>DevFunders love to help!</h3>
           </section>
