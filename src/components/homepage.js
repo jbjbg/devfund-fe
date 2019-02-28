@@ -44,9 +44,9 @@ class Homepage extends React.Component {
               <img src={require("../assets/people/brent.jpg")} alt="brent"/>
               <img id="right" src={require("../assets/people/becca.jpg")} alt="becca"/>
             </div>
-            <div id="info">
+            <div className="info">
               <h4>Subscription to egghead.io - gifted by beccalee123</h4>
-              <p id="request">I'm a recent bootcamp grad and I'd love to continue my learning online. Having a subscription to egghead.io would be a huge help! -brenttech</p>
+              <p className="request">I'm a recent bootcamp grad and I'd love to continue my learning online. Having a subscription to egghead.io would be a huge help! -brenttech</p>
             </div>
           </section>
           <section>
@@ -54,9 +54,9 @@ class Homepage extends React.Component {
               <img src={require("../assets/people/jon.jpeg")} alt="jon"/>
               <img id="right" src={require("../assets/people/jake.jpeg")} alt="jake"/>
             </div>
-            <div id="info">
+            <div className="info">
               <h4>Subscription to Udemy - gifted by 1anderson2jacob</h4>
-              <p id="request">I'm a new developer with a background in CS looking to improve my coding skills. I love data structures and algorithms, and would like to take some courses to help me figure out how to utilize them in daily programming. -jondiquattro</p>
+              <p className="request">I'm a new developer with a background in CS looking to improve my coding skills. I love data structures and algorithms, and would like to take some courses to help me figure out how to utilize them in daily programming. -jondiquattro</p>
             </div>
           </section>
           <section>
@@ -64,9 +64,9 @@ class Homepage extends React.Component {
               <img src={require("../assets/people/becca.jpg")} alt="becca"/>
               <img id="right" src={require("../assets/people/george.jpeg")} alt="george"/>
             </div>
-            <div id="info">
+            <div className="info">
               <h4>React Rally Conference Ticket - gifted by georgeraymond </h4>
-              <p id="request">I'm new developer looking to make some connections and continue my learning in the React community. I'm currently searching for my first position, so funds are tight, but I think this conference would be a great opportunity to help me break into the industry. -beccalee123</p>
+              <p className="request" id="last" >I'm new developer looking to make some connections and continue my learning in the React community. I'm currently searching for my first position, so funds are tight, but I think this conference would be a great opportunity to help me break into the industry. -beccalee123</p>
             </div>
           </section>
         </section>

@@ -66,6 +66,7 @@ p {
   p {
     width: 60%;
     margin-top: 20px;
+    text-align: justify;
   }
 }
 
@@ -88,7 +89,8 @@ a {
   section {
     display: grid;
     grid-template-columns: 200px 1fr;
-    margin: 30px 30px;
+    margin: 30px 5%;
+    width: 90%;
 
     div {
       display: block;
@@ -112,13 +114,19 @@ a {
   margin-left: -20px;
 }
 
-#info {
+.info {
   p {
     margin: 5px 10px;
+    text-align: justify;
+
   }
 
   h4 {
     margin: 5px 10px;
   }
 
+}
+
+#last {
+  margin-bottom: 30px;
 }
