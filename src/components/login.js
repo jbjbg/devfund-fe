@@ -6,6 +6,10 @@ import { Link } from "react-router-dom";
 const API = "https://dev-fund.herokuapp.com";
 
 class Login extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
@@ -17,7 +21,6 @@ class Login extends React.Component {
       .auth(this.state.username, this.state.password)
       .then(response => {
         let token = response.text;
-        console.log(token);
         loginMethodFromContext(token);
       })
       .catch(console.error);
