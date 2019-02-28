@@ -2,8 +2,6 @@ import React from "react";
 import data from "../mock-data/profile.json";
 import { Link } from "react-router-dom";
 
-class Profile extends React.Component {
-
 class Profile extends React.Component{
 //image src for profile picture will need to be a variable
   render() {
