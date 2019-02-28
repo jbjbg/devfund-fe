@@ -13,10 +13,6 @@ class Browse extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      error: false,
-      hasMore: true,
-      isLoading: false,
-      users: [],
       showModal: false
     }
   }

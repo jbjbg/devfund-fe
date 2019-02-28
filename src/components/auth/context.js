@@ -16,6 +16,7 @@ class LoginProvider extends React.Component {
       token: token,
       login: this.login,
       logout: this.logout,
+      user: {}
     };
   }
 

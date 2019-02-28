@@ -19,7 +19,7 @@ class EditProfile extends React.Component {
 
   render() {
 
-    const { fireRedirect } = this.state
+    const { fireRedirect } = this.state;
 
     return(
       <>

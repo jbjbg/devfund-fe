@@ -26,9 +26,11 @@ class Header extends React.Component {
               </ul>
               <ul>
                 <div>
-                  <li>
-                    <Link to="/request">Request</Link>
-                  </li>
+                  <When condition={context.loggedIn}>
+                    <li>
+                      <Link to="/request">Request</Link>
+                    </li>
+                  </When>
                   <li>
                     <Link to="/browse">Browse</Link>
                   </li>
