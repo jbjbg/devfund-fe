@@ -1,19 +1,17 @@
 import React from "react";
 import data from "../mock-data/profile.json";
 import { Link } from "react-router-dom";
-import {LoginContext} from './auth/context.js';
+import { LoginContext } from "./auth/context.js";
 
-class Profile extends React.Component{
-
+class Profile extends React.Component {
   render() {
     return (
       <>
-      <LoginContext.Consumer>
-        {context => {
-          return (
-            {
-              data.user.map((user, i) => (
-              <div key="{i}">
+        <LoginContext.Consumer>
+          {context => {
+            let user = {...context.user};
+            return (
+              <div>
                 <img src={user.image} alt={user.username} />
                 <p>
                   Name: {user.firstname} {user.lastname}
@@ -40,13 +38,12 @@ class Profile extends React.Component{
                 </p>
                 <p>About Me: {user.bio}</p>
               </div>
-            ))}
-           )
-        }}
-      </LoginContext.Consumer>
-      <Link to="/editaccount">Edit</Link>
+            )
+          }}
+        </LoginContext.Consumer>
+        <Link to="/editaccount">Edit</Link>
       </>
-    )
+    );
   }
 }
 
