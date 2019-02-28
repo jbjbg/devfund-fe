@@ -4,8 +4,6 @@ import superagent from 'superagent';
 
 export const LoginContext = React.createContext();
 
-const URL = "https://dev-fund.herokuapp.com";
-
 class LoginProvider extends React.Component {
   constructor(props){
     super(props);
@@ -17,15 +15,14 @@ class LoginProvider extends React.Component {
       login: this.login,
       logout: this.logout,
       user: {},
+      API: 'https://dev-fund.herokuapp.com'
     };
   }
 
-  getUser = async () => {
+  getUser = async (id) => {
     let result = await superagent
-      .get(`${URL}/user/${this.state.user.id}`)
-      .auth(this.state.token)
-
-    console.log('This is the user', result.body)
+      .get(`${this.state.API}/user/${id}`)
+      .set('Authorization', `Bearer ${this.state.token}`)
     this.setState({user: result.body})
   }
 
@@ -38,7 +35,7 @@ class LoginProvider extends React.Component {
     cookie.save('auth', user.token);
     this.setState({user: {id: user.id} });
     this.setLoginState(true);
-    this.getUser();
+    this.getUser(user.id)
   }
 
   logout = () => {

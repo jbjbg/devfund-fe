@@ -1,6 +1,5 @@
 import React from 'react';
 import superagent from 'superagent';
-import pitches from '../mock-data/pitches.json';
 import {When} from "./conditionals.js";
 import Modal from './modules/modal.js';
 import Detail from './detail.js';
@@ -18,16 +17,17 @@ class Browse extends React.Component {
     super(props);
     this.state = {
       showModal: false,
-      pitchList: {},
+      pitchList: [],
+      API: 'https://dev-fund.herokuapp.com'
     }
   }
 
-  componentDidMount = async () => {
+  componentDidMount = () => {
     //run a superagent getAll request
-    await superagent
-    .get(`${URL}/pitch`)
+    superagent
+    .get(`${this.state.API}/api/bulletin`)
     .then( res => {
-      this.setState({pitchList: res.body})
+      this.setState({pitchList: res.body.results})
     })
     .catch(console.error);
   }
@@ -35,6 +35,11 @@ class Browse extends React.Component {
   toggleModal = () => {
     this.setState({ showModal: !this.state.showModal });
   };
+
+  handleClick = (e, pitch) => {
+    this.setState({pitch})
+    this.toggleModal()
+  }
 
   render() {
     return(
@@ -49,15 +54,15 @@ class Browse extends React.Component {
             <Modal title="" close={this.toggleModal}>
               <Detail/>
             </Modal>
-          </When>
-          <ul>{pitches.data.map((pitch, i) => 
-            <li key={i}>
-            <img src={pitch.image} alt="profile pic" />
-            <p>{pitch.username}</p>
-            <h4>{pitch.item} - {pitch.cost}</h4>
-            <p>{pitch.why}</p>
-            <button onClick={this.toggleModal}>Click Me!</button>
-            </li> 
+        </When>
+        <ul>{this.state.pitchList.map((pitch, i) =>
+          <li key={i}>
+          <img src={pitch.data[0].profileImage} alt="profile pic" />
+          <p>{pitch.data[0].username}</p>
+          <h4>{pitch.data[0].item} - {pitch.data[0].cost}</h4>
+          <p>{pitch.data[0].why.slice(0, 150) + '...'}</p>
+            <button onClick={(e) => this.handleClick(e, pitch.data[0])}>Click Me!</button>
+          </li> 
             )}
           </ul>
         </main>
