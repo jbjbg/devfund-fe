@@ -1,17 +1,27 @@
 import React from "react";
 import superagent from "superagent";
 import { LoginContext } from "./auth/context.js";
-import Login from "./login.js";
+import {Redirect} from 'react-router-dom';
+
 
 const API = "https://dev-fund.herokuapp.com";
 
 class Signup extends React.Component {
+  constructor () {
+    super();
+    this.state = {
+      fireRedirect: false
+    }
+  }
+
+
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
   handleSubmit = (e, loginMethodFromContext) => {
     e.preventDefault();
+    this.setState({ fireRedirect: true })
     let data = this.state;
     superagent
       .post(`${API}/signup`)
@@ -27,6 +37,8 @@ class Signup extends React.Component {
   }
 
   render() {
+    const { fireRedirect } = this.state
+
     return (
       <LoginContext.Consumer>
         {context => {
@@ -141,11 +153,12 @@ class Signup extends React.Component {
                   </label>
                 </fieldset>
                 <button type="submit">
-                  {/* <Link to="/account"> */}
                   Submit
-                  {/* </Link> */}
                 </button>
               </form>
+              {fireRedirect && (
+                <Redirect to={'/account'}/>
+              )}
             </>
           );
         }}

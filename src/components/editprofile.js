@@ -1,15 +1,26 @@
 import React from 'react';
 import data from '../mock-data/profile.json';
-import {Link} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 
 let user = {...data.user[0]};
 
 class EditProfile extends React.Component {
-  // handleUpdate = form => {
-    
-  // }
+  constructor () {
+    super();
+    this.state = {
+      fireRedirect: false
+    }
+  }
+
+  submitForm = (e) => {
+    e.preventDefault()
+    this.setState({ fireRedirect: true })
+  }
 
   render() {
+
+    const { fireRedirect } = this.state
+
     return(
       <>
       <br />
@@ -27,7 +38,7 @@ class EditProfile extends React.Component {
       <br />
       <br />
 
-        <form onSubmit={this.handleUpdate}>
+        <form onSubmit={this.submitForm}>
             <label>
               Name:
               <input type="text" name="firstName" defaultValue={user.firstname} required />
@@ -75,11 +86,12 @@ class EditProfile extends React.Component {
               <textarea name="aboutme" rows="5" cols="50"  defaultValue={user.bio} />
             </label>
           <button type="submit">
-            <Link to="/account">
               Submit
-            </Link>
           </button>
         </form>
+        {fireRedirect && (
+          <Redirect to={'/account'}/>
+        )}
       </>
     )
   }
