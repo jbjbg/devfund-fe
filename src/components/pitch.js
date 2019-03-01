@@ -105,7 +105,7 @@ class Pitch extends React.Component {
                       </fieldset>
                     </form>
                     {fireRedirect && 
-                      <Redirect to={"/"} />}
+                      <Redirect to={"/accepted"} />}
                   </Then>
                   <Else>
                     <div id="loggedOut">

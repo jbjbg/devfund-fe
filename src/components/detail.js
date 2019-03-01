@@ -13,11 +13,10 @@ class Detail extends React.Component {
           <p><span>Item:</span> {this.props.pitch.item}</p>
           <p><span>Cost:</span> ${this.props.pitch.price}</p>
           <p><span>Why:</span> {this.props.pitch.pitch}</p>
-          <button type="submit" value="Purchase">DevFund It!</button>
 
           <h3>Requester Details</h3>
           <div id="requester">
-            <img src={this.props.pitch.profileImage} alt={this.props.pitch.username}/>
+            <img src="http://placeimg.com/150/150/animals" alt={this.props.pitch.username}/>
             <p><span>Username:</span> {this.props.pitch.username}</p>
             <p><span>First Name:</span> {this.props.pitch.firstname}</p>
             <p><span>City:</span> {this.props.pitch.city}</p>

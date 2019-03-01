@@ -46,14 +46,14 @@ class EditProfile extends React.Component {
             return (
               <form id='myForm' onSubmit={(e) => this.submitForm(e, context)}>
                 <fieldset>
-                <label>
+                {/* <label>
                   Upload:
                   <input
                     type="file"
                     name="pic"
                     accept="image/*"
                     />
-                </label>
+                </label> */}
                 <label>
                   First Name:
                   <input
