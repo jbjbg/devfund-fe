@@ -31,7 +31,7 @@ const About = () => {
                 <img className="socialicon" src={require("../assets/social/iconfinder_icon-social-github-outline_211903.png")} alt="GitHub Icon"/>
             </a>
           </div>
-          <p>My name is George Raymond and I am a Software Developer and General Tech Enthusiast. As a recent transplant from Los Angeles I am enjoying networking and connecting with new people in Seattle who share my passion for technology. Outside of technology I enjoy exploring new restaurants, cooking, and spending time with my dog and family. doggo</p>
+          <p>My name is George Raymond and I am a Software Developer and General Tech Enthusiast. As a recent transplant from Los Angeles I am enjoying networking and connecting with new people in Seattle who share my passion for technology. Outside of technology I enjoy exploring new restaurants, cooking, and spending time with my dog and family.</p>
         </div>
 
         <div>
@@ -63,7 +63,9 @@ const About = () => {
                 <img className="socialicon" src={require("../assets/social/iconfinder_icon-social-github-outline_211903.png")} alt="GitHub Icon"/>
             </a>
           </div>
-          <p>Brent is a Software Developer currently studying at Code Fellows who loves a good puzzle. Originally from the Midwest, he longed to visit the ocean. Now that he lives in Washington, he can enjoy this delightful experience whenever he wants. When not hard at work learning software development, he enjoys spending time with his wife, reading, hiking, enjoying a fine cigar, and playing games of all kinds.</p>
+          <p>Brent is a Software Developer with a background in hospitality management which has informed his user-focused development process. When not coding, he enjoys spending time with his wife, reading, hiking, enjoying a fine cigar, and playing games of all kinds.</p>
+
+
         </div>
 
         <div>
