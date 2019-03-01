@@ -20,4 +20,18 @@ footer {
   p {
     text-align: center;
   }
+
+  a {
+    color: $light;
+    display: block;
+    text-align: center;
+  }
+
+  a:hover {
+    color: $highlight
+  }
+
+  #logo:hover{
+    color: $highlight
+  }
 }

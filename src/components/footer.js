@@ -9,6 +9,7 @@ class Footer extends React.Component {
       <>
       <footer>
         <a href="/" id="logo">DF</a>
+        <a href="https://github.com/jbjbg/devfund-fe">GitHub Repo</a>
         <p>&copy;2019 JBJBG </p>
       </footer>
       </>
