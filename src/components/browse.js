@@ -59,7 +59,7 @@ class Browse extends React.Component {
               <p className="username">{pitch.data[0].username}</p>
             </div>
             <div id="pitch">
-              <h4 className="pitchheader">{pitch.data[0].item} - {pitch.data[0].cost}</h4>
+              <h4 className="pitchheader">{pitch.data[0].item} - {pitch.data[0].price}</h4>
               <p>{pitch.data[0].why.slice(0, 150) + '...'}</p>
             </div>
             <button onClick={(e) => this.handleClick(e, pitch.data[0])}>Details</button>

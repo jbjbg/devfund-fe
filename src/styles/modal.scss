@@ -137,4 +137,28 @@
       
     }
   }
+
+  #detailModal{
+    text-align: center;
+
+    h2{
+      margin: 10px auto 20px auto;
+    }
+
+    h3{
+      font-family: $headingsfont;
+      font-weight: normal;
+      margin: 30px 0px;
+    }
+
+    p{
+      font-size: 1.25em;
+    }
+
+    span {
+      font-weight: bolder;
+      font-size: 1.25em;
+    }
+
+  }
 }
