@@ -25,6 +25,8 @@ class EditProfile extends React.Component {
       .set('Authorization', `Bearer ${context.token}`)
       .send(this.state.data)
       .then( res => {
+        context.updateUser(res.body)
+        // console.log(res)
         //exicute context update function
     })
       .catch(console.error);

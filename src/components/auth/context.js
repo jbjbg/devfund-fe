@@ -14,6 +14,7 @@ class LoginProvider extends React.Component {
       token: token,
       login: this.login,
       logout: this.logout,
+      updateUser: this.updateUser,
       user: {},
       API: 'https://dev-fund.herokuapp.com'
     };
@@ -23,7 +24,11 @@ class LoginProvider extends React.Component {
     let result = await superagent
       .get(`${this.state.API}/user/${id}`)
       .set('Authorization', `Bearer ${this.state.token}`)
-    this.setState({user: result.body})
+    this.setState({user: {...result.body}})
+  }
+
+  updateUser = (user) => {
+    this.setState({user: user});
   }
 
   setLoginState = loggedIn => {
@@ -33,9 +38,9 @@ class LoginProvider extends React.Component {
 
   login = user => {
     cookie.save('auth', user.token);
-    this.setState({user: {id: user.id} });
-    this.getUser(user.id)
+    this.setState({user: {...this.state.user, id: user.id} });
     this.setLoginState(true);
+    this.getUser(user.id)
   }
 
   logout = () => {

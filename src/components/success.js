@@ -24,6 +24,7 @@ class Success extends React.Component {
           <h1>Success!</h1>
           <img src={require("../assets/dog.gif")} alt="dog typing at computer"/>
           <p>Thank you for DevFunding!</p>
+          <p>The DevFundee will be notified and will recieve an access key.</p>
           <button onClick={this.onClick}>Browse</button>
           {fireRedirect && (
             <Redirect to={'/browse'} />
