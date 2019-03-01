@@ -2,13 +2,14 @@ import React from "react";
 import { When, If, Then, Else } from "./conditionals.js";
 import { Redirect } from "react-router-dom";
 import { LoginContext } from "./auth/context.js";
+import Modal from "./modules/modal.js";
+import Login from "./login.js";
+import superagent from 'superagent';
 
 import "../styles/reset.scss";
 import "../styles/base.scss";
 import "../styles/pitch.scss";
 
-import Modal from "./modules/modal.js";
-import Login from "./login.js";
 
 class Pitch extends React.Component {
   constructor(props) {
@@ -17,7 +18,9 @@ class Pitch extends React.Component {
       show: false,
       value: 'default',
       fireRedirect: false,
-      showModal: false
+      API: "http://dev-fund.herokuapp.com",
+      showModal: false,
+      pitch: {}
     };
   }
 
@@ -28,16 +31,33 @@ class Pitch extends React.Component {
   handleShow = () => this.setState({ show: true });
   handleHide = () => this.setState({ show: false });
 
-  handleSubmit = e => {
+  handleSubmit = async (e, context) => {
     e.preventDefault();
-    //add post route for creating submit
-    this.setState({ fireRedirect: true });
+    let pitch = {
+      ...this.state.pitch,
+      username: context.user.username,
+      user_id: context.user._id,
+      firstname: context.user.firstname,
+      city: context.user.city,
+      bio: context.user.bio,
+      github: context.user.github,
+      image: context.user.image,
+      linkedin: context.user.linkedin,
+      twitter: context.user.twitter,
+      blog: context.user.blog
+    }
+    await this.setState({ fireRedirect: true, pitch })
+    superagent
+      .post(`${this.state.API}/api/pitch`)
+      .send(this.state.pitch)
+      .catch(console.error)
   };
 
   handleChange = e => {
-    let value = e.target.value;
-    let show = value === "other" ? true : false;
-    this.setState({ value, show });
+    this.setState({pitch: {...this.state.pitch, [e.target.name]: e.target.value}})
+    if(e.target.value === "other") {
+      this.setState({ show: true })
+    }
   };
 
   render() {
@@ -57,12 +77,11 @@ class Pitch extends React.Component {
               return (
                 <If condition={context.loggedIn}>
                   <Then>
-                    <form onSubmit={this.handleSubmit}>
+                    <form onSubmit={e => this.handleSubmit(e, context)}>
                       <fieldset>
                         <label>Service Requested: </label>
                         <select
-                          name="yourrequest"
-                          value={this.state.value}
+                          name="item"
                           onChange={this.handleChange}
                           required
                         >
@@ -79,13 +98,14 @@ class Pitch extends React.Component {
                           <input type="text" required />
                         </When>
                         <label>Cost: </label>
-                        <input type="number" step=".01" />
+                        <input onChange={this.handleChange} name="price" type="number" step=".01" />
                         <label>Your Pitch:</label>
-                        <input type="textarea" />
+                        <textarea rows="5" cols="50" onChange={this.handleChange} name="pitch" />
                         <button type="submit">Submit</button>
                       </fieldset>
                     </form>
-                    {fireRedirect && <Redirect to={"/browse"} />}
+                    {fireRedirect && 
+                      <Redirect to={"/"} />}
                   </Then>
                   <Else>
                     <div id="loggedOut">

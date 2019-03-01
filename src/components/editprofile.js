@@ -10,9 +10,9 @@ import "../styles/editprofile.scss";
 class EditProfile extends React.Component {
   constructor() {
     super();
-    this.state = { 
+    this.state = {
       fireRedirect: false,
-      API: 'http://dev-fund.herokuapp.com',
+      API: "http://dev-fund.herokuapp.com",
       data: {}
     };
   }
@@ -20,16 +20,18 @@ class EditProfile extends React.Component {
   submitForm = (e, context) => {
     e.preventDefault();
     this.setState({ fireRedirect: true });
-    // console.log('context', context);
-    console.log('state', this.state.data);
-    // superagent
-    // .put()
-    // .set('Authorization', `Bearer ${context.token}`)
-    // .send(data)
+    superagent
+      .put(`${this.state.API}/user/update/${context.user._id}`)
+      .set('Authorization', `Bearer ${context.token}`)
+      .send(this.state.data)
+      .then( res => {
+        //exicute context update function
+    })
+      .catch(console.error);
   };
 
   handleChange = e => {
-    this.setState({data: {[e.target.name]: e.target.value }});
+    this.setState({ data: {...this.state.data, [e.target.name]: e.target.value } });
   };
 
   render() {
@@ -46,7 +48,11 @@ class EditProfile extends React.Component {
                 <fieldset>
                 <label>
                   Upload:
-                  <input type="file" name="pic" accept="image/*" />
+                  <input
+                    type="file"
+                    name="pic"
+                    accept="image/*"
+                    />
                 </label>
                 <label>
                   First Name:
@@ -63,6 +69,7 @@ class EditProfile extends React.Component {
                   <input
                     type="text"
                     name="lastname"
+                    onChange={this.handleChange}
                     defaultValue={context.user.lastname}
                     required
                   />
@@ -72,6 +79,7 @@ class EditProfile extends React.Component {
                   <input
                     type="text"
                     name="email"
+                    onChange={this.handleChange}
                     defaultValue={context.user.email}
                     required
                   />
@@ -81,6 +89,7 @@ class EditProfile extends React.Component {
                   <input
                     type="text"
                     name="phone"
+                    onChange={this.handleChange}
                     defaultValue={context.user.phone}
                   />
                 </label>
@@ -89,8 +98,9 @@ class EditProfile extends React.Component {
                   <input
                     type="text"
                     name="address1"
-                    required
+                    onChange={this.handleChange}
                     defaultValue={context.user.address1}
+                    required
                   />
                 </label>
                 <label>
@@ -98,6 +108,7 @@ class EditProfile extends React.Component {
                   <input
                     type="text"
                     name="address2"
+                    onChange={this.handleChange}
                     defaultValue={context.user.address2}
                   />
                 </label>
@@ -106,6 +117,7 @@ class EditProfile extends React.Component {
                   <input
                     type="text"
                     name="city"
+                    onChange={this.handleChange}
                     defaultValue={context.user.city}
                     required
                   />
@@ -115,6 +127,7 @@ class EditProfile extends React.Component {
                   <input
                     type="text"
                     name="state"
+                    onChange={this.handleChange}
                     defaultValue={context.user.state}
                     required
                   />
@@ -124,6 +137,7 @@ class EditProfile extends React.Component {
                   <input
                     type="text"
                     name="zip"
+                    onChange={this.handleChange}
                     defaultValue={context.user.zip}
                     required
                   />
@@ -133,6 +147,7 @@ class EditProfile extends React.Component {
                   <input
                     type="text"
                     name="github"
+                    onChange={this.handleChange}
                     defaultValue={context.user.github}
                   />
                 </label>
@@ -141,6 +156,7 @@ class EditProfile extends React.Component {
                   <input
                     type="text"
                     name="linkedin"
+                    onChange={this.handleChange}
                     defaultValue={context.user.linkedin}
                   />
                 </label>
@@ -149,6 +165,7 @@ class EditProfile extends React.Component {
                   <input
                     type="text"
                     name="twitter"
+                    onChange={this.handleChange}
                     defaultValue={context.user.twitter}
                   />
                 </label>
@@ -157,15 +174,17 @@ class EditProfile extends React.Component {
                   <input
                     type="text"
                     name="blog"
+                    onChange={this.handleChange}
                     defaultValue={context.user.blog}
                   />
                 </label>
                 <label>
                   About Me:
                   <textarea
-                    name="aboutme"
+                    name="bio"
                     rows="5"
                     cols="50"
+                    onChange={this.handleChange}
                     defaultValue={context.user.bio}
                   />
                 </label>
