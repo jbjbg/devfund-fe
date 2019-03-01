@@ -47,7 +47,8 @@ class Pitch extends React.Component {
       <>
         <main id="pitchPage">
           <section className="hero" id="pitch">
-          <h1>Your Profile</h1>
+          <h1>Make a Request</h1>
+          <h3>DevFunders love to help!</h3>
 
           </section>
           <h2 id="formheader">What do you need DevFunded?</h2>
