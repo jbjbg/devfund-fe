@@ -12,7 +12,7 @@ class EditProfile extends React.Component {
     super();
     this.state = {
       fireRedirect: false,
-      API: "http://dev-fund.herokuapp.com",
+      API: "https://dev-fund.herokuapp.com",
       data: {}
     };
   }
