@@ -55,7 +55,7 @@ class Browse extends React.Component {
         <ul>{this.state.pitchList.map((pitch, i) =>
           <li key={i}>
             <div id="photoAndName">
-              <img src={pitch.data[0].profileImage} alt="profile pic" />
+              <img src={pitch.data[0].image} alt="profile pic" />
               <p className="username">{pitch.data[0].username}</p>
             </div>
             <div id="pitch">

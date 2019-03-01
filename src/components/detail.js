@@ -30,7 +30,6 @@ class Detail extends React.Component {
             <button type="submit" value="Purchase">DevFund It!</button>
           </form>
           </div>
-
         </div>
       </>
     )
