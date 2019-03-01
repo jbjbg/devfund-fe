@@ -157,7 +157,7 @@ class Signup extends React.Component {
                 </button>
               </form>
               {fireRedirect && (
-                <Redirect to={'/account'}/>
+                <Redirect to={'/'}/>
               )}
             </>
           );

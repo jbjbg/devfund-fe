@@ -10,8 +10,8 @@ class Detail extends React.Component {
       <>
         <h2>Request Details</h2>
         <p>Item: {this.props.pitch.item}</p>
-        <p>Cost: ${this.props.pitch.cost}</p>
-        <p>Why: {this.props.pitch.why}</p>
+        <p>Cost: ${this.props.pitch.price}</p>
+        <p>Why: {this.props.pitch.pitch}</p>
 
         <h2>Requester Details</h2>
         <img src={this.props.pitch.profileImage} alt={this.props.pitch.username}/>
