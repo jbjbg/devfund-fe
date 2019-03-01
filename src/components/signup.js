@@ -3,6 +3,10 @@ import superagent from "superagent";
 import { LoginContext } from "./auth/context.js";
 import {Redirect} from 'react-router-dom';
 
+import "../styles/reset.scss";
+import "../styles/base.scss";
+import "../styles/signup.scss";
+
 
 const API = "https://dev-fund.herokuapp.com";
 
@@ -40,17 +44,12 @@ class Signup extends React.Component {
     const { fireRedirect } = this.state
 
     return (
+      <main id="signupPage">
+        <h1>Sign Up</h1>
       <LoginContext.Consumer>
         {context => {
           return (
             <>
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
               <form onSubmit={ e => this.handleSubmit(e, context.login)}>
                 <fieldset>
                   <legend>Login Information:</legend>
@@ -151,10 +150,10 @@ class Signup extends React.Component {
                       onChange={this.handleChange}
                     />
                   </label>
-                </fieldset>
                 <button type="submit">
                   Submit
                 </button>
+                </fieldset>
               </form>
               {fireRedirect && (
                 <Redirect to={'/account'}/>
@@ -163,6 +162,7 @@ class Signup extends React.Component {
           );
         }}
       </LoginContext.Consumer>
+      </main>
     );
   }
 }

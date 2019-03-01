@@ -8,8 +8,6 @@ import "../styles/reset.scss";
 import "../styles/base.scss";
 import "../styles/browse.scss";
 
-
-
 //limit characters on the Why - end with a ... to show more is available.
 
 class Browse extends React.Component {
@@ -51,7 +49,7 @@ class Browse extends React.Component {
           <h2>All Pitches</h2>
           <When condition={this.state.showModal}>
             <Modal title="" close={this.toggleModal}>
-              <Detail/>
+              <Detail pitch={this.state.pitch}/>
             </Modal>
         </When>
         <ul>{this.state.pitchList.map((pitch, i) =>
