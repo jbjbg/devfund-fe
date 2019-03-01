@@ -24,14 +24,14 @@ class Signup extends React.Component {
 
   handleSubmit = (e, loginMethodFromContext) => {
     e.preventDefault();
-    this.setState({ fireRedirect: true })
     let data = this.state;
     superagent
-      .post(`${API}/signup`)
-      .send(data)
-      .then(res => {
-        console.log(res.body)
-        loginMethodFromContext(res.body)
+    .post(`${API}/signup`)
+    .send(data)
+    .then(res => {
+      console.log(res.body)
+      loginMethodFromContext(res.body)
+      this.setState({ fireRedirect: true })
       })
       .catch(console.error);
   };

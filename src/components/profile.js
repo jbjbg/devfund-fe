@@ -30,7 +30,7 @@ class Profile extends React.Component {
               return (
                 <>
                 <div id="profile">
-                  <img src={user.image} alt={user.username} />
+                  <img src="http://placeimg.com/150/150/animals" alt={user.username} />
                   <p>
                     Name: {user.firstname} {user.lastname}
                   </p>

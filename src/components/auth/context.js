@@ -34,18 +34,14 @@ class LoginProvider extends React.Component {
   login = user => {
     cookie.save('auth', user.token);
     this.setState({user: {id: user.id} });
-    this.setLoginState(true);
     this.getUser(user.id)
+    this.setLoginState(true);
   }
 
   logout = () => {
     cookie.remove('auth');
     this.setLoginState(false);
   }
-
-  // toggleLogin = () => {
-  //   this.setState({login: !this.state.login});
-  // }
 
   render(){
     return(

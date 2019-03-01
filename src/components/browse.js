@@ -20,12 +20,6 @@ class Browse extends React.Component {
     }
   }
 
-  // static getDerivedStateFromProps(props, state) {
-  //   if(props.location.state === true) {
-  //   this.getBulletin();
-  //   return state;
-  // }
-
   getBulletin = async () => {
     await superagent
     .get(`${this.state.API}/api/bulletin`)
@@ -65,7 +59,7 @@ class Browse extends React.Component {
         <ul>{this.state.pitchList.map((pitch, i) =>
           <li key={i}>
             <div id="photoAndName">
-              <img src={pitch.image} alt="profile pic" />
+              <img src="http://placeimg.com/150/150/animals" alt="profile pic" />
               <p className="username">{pitch.username}</p>
             </div>
             <div id="pitch">
