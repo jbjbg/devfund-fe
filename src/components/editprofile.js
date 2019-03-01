@@ -3,6 +3,10 @@ import { Redirect } from "react-router-dom";
 import { LoginContext } from "./auth/context";
 import superagent from "superagent";
 
+import "../styles/reset.scss";
+import "../styles/base.scss";
+import "../styles/editprofile.scss";
+
 class EditProfile extends React.Component {
   constructor() {
     super();
@@ -33,17 +37,19 @@ class EditProfile extends React.Component {
 
     return (
       <>
-        <section className="hero" />
+      <main id="editProfile">
+      <h1>Edit Your Account</h1>
         <LoginContext.Consumer>
           {context => {
             return (
               <form id='myForm' onSubmit={(e) => this.submitForm(e, context)}>
+                <fieldset>
                 <label>
                   Upload:
                   <input type="file" name="pic" accept="image/*" />
                 </label>
                 <label>
-                  Name:
+                  First Name:
                   <input
                     type="text"
                     name="firstname"
@@ -51,16 +57,16 @@ class EditProfile extends React.Component {
                     defaultValue={context.user.firstname}
                     required
                   />
+                  </label>
+                  <label>
+                    Last Name:
                   <input
                     type="text"
                     name="lastname"
                     defaultValue={context.user.lastname}
                     required
                   />
-                </label>
-                <p>
-                  Username: <span>{context.user.username}</span>
-                </p>
+                  </label>
                 <label>
                   Email:
                   <input
@@ -88,6 +94,7 @@ class EditProfile extends React.Component {
                   />
                 </label>
                 <label>
+                  Address 2:
                   <input
                     type="text"
                     name="address2"
@@ -95,18 +102,25 @@ class EditProfile extends React.Component {
                   />
                 </label>
                 <label>
+                  City:
                   <input
                     type="text"
                     name="city"
                     defaultValue={context.user.city}
                     required
                   />
+                </label>
+                <label>
+                  State:
                   <input
                     type="text"
                     name="state"
                     defaultValue={context.user.state}
                     required
                   />
+                </label>
+                <label>
+                  Zip Code:
                   <input
                     type="text"
                     name="zip"
@@ -156,11 +170,13 @@ class EditProfile extends React.Component {
                   />
                 </label>
                 <button type="submit">Submit</button>
+                </fieldset>
               </form>
             );
           }}
         </LoginContext.Consumer>
         {fireRedirect && <Redirect to={"/account"} />}
+        </main>
       </>
     );
   }
