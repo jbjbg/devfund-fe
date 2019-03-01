@@ -8,8 +8,6 @@ import "../styles/reset.scss";
 import "../styles/base.scss";
 import "../styles/browse.scss";
 
-
-
 //limit characters on the Why - end with a ... to show more is available.
 
 class Browse extends React.Component {

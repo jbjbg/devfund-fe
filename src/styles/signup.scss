@@ -1,7 +1,7 @@
 @import "./variables.scss";
 
 
-#editProfile{
+#signupPage{
   height: 100%;
   background-image: linear-gradient(to bottom right, $highlight, $medium);
 
@@ -33,13 +33,15 @@
         width: 100%;
       }
 
-      textarea{
-        width: 100%;
-        font-size: 1em;
+      button {
+        margin: 30px auto 30px auto;
       }
 
-      button {
-        margin: 30px auto 10px auto;
+      legend{
+        font-weight: bold;
+        font-size: 1.5em;
+        font-family: $headingsfont;
+        margin: 20px 0px;
       }
 
     }

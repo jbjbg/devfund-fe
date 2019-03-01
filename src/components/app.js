@@ -15,6 +15,10 @@ import Login from './login.js';
 import Pitch from './pitch.js';
 import EditProfile from './editprofile.js';
 import About from './about.js';
+import Success from './success.js';
+import Accepted from './accepted.js';
+
+
 
 
 class App extends React.Component {
@@ -47,6 +51,9 @@ class App extends React.Component {
         <Route exact path="/account" component={Profile} />
         <Route exact path="/editaccount" component={EditProfile} />
         <Route exact path="/about" component={About} />
+        <Route exact path="/success" component={Success}></Route>
+        <Route exact path="/accepted" component={Accepted}></Route>
+
 
         <Footer />
       </LoginContext>

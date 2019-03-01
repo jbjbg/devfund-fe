@@ -1,0 +1,35 @@
+@import "./variables.scss";
+
+
+#profilePage{
+
+  background-image: linear-gradient(to bottom right, $highlight, $medium);
+
+  h1{
+    font-size: 3.5em;
+    padding: 80px 0px 30px 0px;
+    text-align: center;
+  }
+
+  #profile{
+    width: 80%;
+    margin: 10px auto;
+    border: 3px solid $dark;
+    padding: 30px;
+    background-color: $light;
+    
+    p{
+      margin: 10px;
+    }
+  }
+
+  #button {
+    width: 20%;
+    margin: 0px auto;
+
+    button {
+      margin: 30px auto 50px auto;
+    }
+  }
+
+}
