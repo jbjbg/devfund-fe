@@ -3,7 +3,7 @@ import { Redirect } from "react-router-dom";
 
 import '../styles/reset.scss';
 import '../styles/base.scss';
-import '../styles/homepage.scss';
+import '../styles/success.scss';
 
 class Success extends React.Component {
   constructor(props) {
