@@ -18,7 +18,7 @@ class Pitch extends React.Component {
       show: false,
       value: 'default',
       fireRedirect: false,
-      API: "http://dev-fund.herokuapp.com",
+      API: "https://dev-fund.herokuapp.com",
       showModal: false,
       pitch: {}
     };
