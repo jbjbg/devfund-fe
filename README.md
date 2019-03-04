@@ -48,10 +48,6 @@ The DevFund project is a proof-of-concept for a site that helps fund learning re
 - to run locally, fork and clone the repo, run `npm i`, and then run `npm start`
 - Otherwise, visit the [DevFund](https://www.devfund.io/) site to use the app
 
-#### Tests
-* How do you run tests?
-* What assertions were made?
-* What assertions need to be / should be made?
 
 #### Sources
 Special thanks to [verticalgrain](https://gist.github.com/verticalgrain) for their [gist](https://gist.github.com/verticalgrain/195468e69f2ac88f3d9573d285b09764) on React Router V4 Redirect after form submission. It was a great help with our redirects!
