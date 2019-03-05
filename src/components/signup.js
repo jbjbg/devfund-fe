@@ -29,7 +29,6 @@ class Signup extends React.Component {
     .post(`${API}/signup`)
     .send(data)
     .then(res => {
-      console.log(res.body)
       loginMethodFromContext(res.body)
       this.setState({ fireRedirect: true })
       })
