@@ -11,6 +11,9 @@
 ## Project Info
 The DevFund project is a proof-of-concept for a site that helps fund learning resources for new developers looking to break into the industry. It's an easy way for new devs to request the resources they need to learn to code, and for folks looking to give back to help fund them. DevFund was built to help grow the developer community and make giving back to it a little easier.
 
+## Timeframe
+This project was built between 2/25/2019 and 2/28/2019. Any subsequent updates are reflected in the commit history.
+
 ## Technology Used - Front End
 - React
 - SASS
