@@ -5,6 +5,11 @@ class Detail extends React.Component {
     super(props);
   }
 
+  // openInNewTab = (url) => {
+  //   let win = window.open(url, '_blank');
+  //   win.focus();
+  // }
+
   render() {
     return (
       <>
